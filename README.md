@@ -142,3 +142,133 @@ Angular 11
                                                                             npm install -g @angular/cli@11      
             Typescript                  Scripting Language
             Chrome                      Browser
+
+    Angular CLI 
+    ---------------------------------------------------------------------------------------------------
+        is a Project Mangement Tool.
+
+        ng new proj-name
+
+        cd proj-name
+
+        ng g component componentName
+        ng g service serviceName
+        ng g module moduleName
+        ng g guard guardName
+        ng g pipe pipeName
+        ng g class className
+        ng g interface interfaceName
+
+            --skipTests flag can be used to avoid creating unit test files.
+
+        ng build                    transpell all .ts into .js and then 
+                                    will provide the compiled app files in a 'dist' folder.
+
+        ng serve                    transpell all .ts into .js and then 
+        ng serve --port 5656 -o     will host them in a temparary devlopement server. default port 4200.
+
+        ng test                     transpell all .ts into .js and then 
+                                    will launch the unit test cases on karma platform
+
+
+    Angular Archetecture
+    ---------------------------------------------------------------------------------------------------
+
+    an angular application composes of various Typescript classes each identified by
+    a decorator. Every decorator takes some config properties called META_DATA
+
+        Module              @NgModule
+        Componenet          @Component
+        Ditrective          @Directive
+        Service             @Injectable
+        Pipe                @Pipe
+        Guard               @Injectable
+        Interceptor         @Injectable
+
+
+        Module
+        -----------------------
+                    Angular Modules are different from ES-Modules
+
+                    An angular module is a logical collection of Components,Directives....etc.,
+                    and other modules as well.
+
+                    Each angular app must be within a module called the root module 'app.module'
+
+                    @NgModule({
+                        declarations:[
+                            list of components,directives and pipes
+                        ],
+                        imports:[
+                            list of sub-modules
+                        ],
+                        exports:[
+                            list of components,directives and pipes that are to be used by 
+                            other modules
+                        ],
+                        providers:[
+                           list of services that belong to the current module 
+                        ],
+                        bootstrap:[
+                            one or more components whose DOM must be inserted into the index.htm while
+                            launching the app.
+                        ]
+                    })
+                    class AppModule{}
+
+                    a sub-module is called a Feature module.
+
+        Component
+        ---------------------------------
+                        a component is smart segment of a page that encapsualtes 
+                        a specific feature. a component is used as a user-defiend
+                        html element (tag)
+
+                        Component = Controller              +   Template
+                                    (state and behaviour)       (html dom)
+
+
+                        header.component.ts
+                        --------------------------------
+                        @Component({
+                            selector:'my-header',
+                            templateUrl:'header.component.html',
+                            providers:[]
+                        })
+                        class HeaderComponent{
+                            
+                            title:string;
+
+                            constructor(){
+                                this.title="This is my first angular component";
+                            }
+                        }
+
+                        header.component.html
+                        --------------------------
+                            <h3>{{title}}</h3>
+                        
+                        <my-header></my-header>
+
+                        Components and Styke sheets
+                        ----------------------------------
+                            src/styles.css          Global Style Sheet
+
+                            component.css           Component specific style sheet.
+        
+                        Data Binding
+                        ----------------------------------
+
+                            associating the fields and methods in the controller
+                            with the tag content/attributes and events in the template.
+
+                            Interpolation
+
+                                {{angular-expression}}
+
+                            Event Binding
+                            One-Way Data Binding 
+                                Attribute Binding
+                                Style Binding
+                                Class Binding
+                            Two-Way Data Binding
