@@ -1,6 +1,18 @@
 <div id="si">
     <h3>Simple Interest</h3>
 
+    <form>
+        <div>
+            <label>Loan Amount: <input type="number" name="tb1" [(ngModel)]="loanAmount" /></label>
+        </div>
+        <div>
+            <label>Rate Of Interest: <input type="number" name="tb2" [(ngModel)]="roi" /></label>
+        </div>
+        <div>
+            <label>Term: <input type="number" name="tb3" [(ngModel)]="term" /></label>
+        </div>
+    </form>
+
     <p>
         On borrowing an amount of {{loanAmount}} at a rate of interest {{roi}},
         for a period of {{term}} months, we are ought to pay an interest of

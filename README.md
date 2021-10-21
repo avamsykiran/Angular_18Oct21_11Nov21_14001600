@@ -179,7 +179,7 @@ Angular 11
 
         Module              @NgModule
         Componenet          @Component
-        Ditrective          @Directive
+        Directive           @Directive
         Service             @Injectable
         Pipe                @Pipe
         Guard               @Injectable
@@ -256,19 +256,70 @@ Angular 11
 
                             component.css           Component specific style sheet.
         
-                        Data Binding
-                        ----------------------------------
+        Directive
+        --------------------------------------------------------------------------------
 
-                            associating the fields and methods in the controller
-                            with the tag content/attributes and events in the template.
+            is a customized attribute.
 
-                            Interpolation
+            in-built
+                ngModel
+                ngClass
+                eventDirecitves
+                    click
+                    dblclick
+                    blur
+                    focus
+                    mouseover
+                    mouseenter ...etc
 
-                                {{angular-expression}}
+                Structural Directives
+                    *ngIf
+                    *ngFor
+                    ngSwitch
+                        *ngSwitchCase
+                        *ngDefault
 
-                            Event Binding
-                            One-Way Data Binding 
-                                Attribute Binding
-                                Style Binding
-                                Class Binding
-                            Two-Way Data Binding
+            custom
+
+                        @Directive({
+                            selector:'my-attrib'
+                            providers:[]
+                        })
+                        class MyAttrib{
+                            .......
+                        }
+
+        Data Binding
+        ----------------------------------
+
+            associating the fields and methods in the controller
+            with the tag content/attributes and events in the template.
+
+            Interpolation
+
+                {{angular-expression}}
+
+            Event Binding
+
+                (eventDirective)="eventHandler()"
+
+            One-Way Data Binding 
+                Attribute Binding
+
+                    [attribute]="angular-expression"
+
+                Style Binding
+
+                    [style.cssProperty]="angular-expression"    
+
+                Class Binding
+
+                    [class]="{'class-name1':booleanFlag,'class-name2':booleanFlag,'class-name3':booleanFlag}"
+
+            Two-Way Data Binding
+
+                is used only with 'input' elements.
+
+                ngModel     FormsModule     @angular/forms
+
+                [(ngModel)]="fieldFromController"

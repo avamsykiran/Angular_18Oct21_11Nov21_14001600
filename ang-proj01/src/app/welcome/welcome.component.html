@@ -1,6 +1,25 @@
 <section id="welcome">
+    <img [src]="logos[currentLogoIndex]" (dblclick)="toggleLogo()" 
+    [style.width.px]="imgWidth"
+    [class]="{'border':borderFlag,'center':centerFlag,'round-corner':roundCornerFlag}"/>
+
+    <form>
+        <div>
+            <label>Logo Width:
+                <input type="range" name="iw" [(ngModel)]="imgWidth" min="50" max="1000" /> 
+                <strong>{{imgWidth}} pixels</strong>
+            </label>
+        </div>
+        <div>
+            <label><input type="checkbox" name="ch1" [(ngModel)]="centerFlag"/>Apply Center</label>
+            <label><input type="checkbox" name="ch2" [(ngModel)]="borderFlag"/>Apply Border</label>
+            <label><input type="checkbox" name="ch3" [(ngModel)]="roundCornerFlag"/>Apply Round Corner</label>
+        </div>
+    </form>
+
     <p>
         Hai! <strong>{{userName}}</strong>!
         welcome to our first angular app.
     </p>
+    <button (click)="changeUserName()">Change UserName</button>
 </section>

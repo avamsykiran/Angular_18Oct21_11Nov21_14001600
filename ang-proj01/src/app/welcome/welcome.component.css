@@ -2,3 +2,16 @@
     padding:1%;
     background-color: #cacaca;
 }
+
+.border{
+    border:3px solid black;
+}
+
+.round-corner{
+    border-radius: 20%;
+}
+
+.center{
+    display: block;
+    margin: auto;
+}
