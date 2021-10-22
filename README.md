@@ -180,8 +180,8 @@ Angular 11
         Module              @NgModule
         Componenet          @Component
         Directive           @Directive
-        Service             @Injectable
         Pipe                @Pipe
+        Service             @Injectable
         Guard               @Injectable
         Interceptor         @Injectable
 
@@ -280,7 +280,6 @@ Angular 11
                         *ngDefault
 
             custom
-
                         @Directive({
                             selector:'my-attrib'
                             providers:[]
@@ -316,6 +315,14 @@ Angular 11
 
                     [class]="{'class-name1':booleanFlag,'class-name2':booleanFlag,'class-name3':booleanFlag}"
 
+                    [class.class-name]="booleanFlag"
+
+                    [ngClass]="angular-expression"
+                            this angular-expression must return 
+                                a string of classes like 'class1 class2 classe'
+                                an array of classes like ['class1','class2','class3']
+                                a json object of classes like {'class-name1':booleanFlag,'class-name2':booleanFlag,'class-name3':booleanFlag}
+
             Two-Way Data Binding
 
                 is used only with 'input' elements.
@@ -323,3 +330,28 @@ Angular 11
                 ngModel     FormsModule     @angular/forms
 
                 [(ngModel)]="fieldFromController"
+
+    Pipe
+    -----------------------
+
+        is used to transform data just before it is rendered.
+
+        in-built
+            lowercase
+            uppercase
+            titlecase
+            number
+            currency
+            date
+            async
+            json
+
+        custom
+            @Pipe({
+                name:''
+            })
+            class MyPipe implements PipeTransform {
+                transform(value:any):any {
+                    .........
+                }
+            }         

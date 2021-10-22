@@ -1,0 +1,20 @@
+<div id="friends">
+
+    <h3>Friends</h3>
+
+    <ol *ngIf="friends.length>0;else defaultMsg">
+        <li *ngFor="let f of friends">
+            {{f}}
+            <button (click)="remove(f)">DELETE</button>
+        </li>
+    </ol>
+
+    <ng-template #defaultMsg>
+        <div><strong>No friends to display</strong></div>
+    </ng-template>
+
+    <form (ngSubmit)="add()">
+        <input type="text" name="tb1" [(ngModel)]="inputtedFriend" placeholder="friend name" required/>
+        <button>ADD</button>
+    </form>
+</div>
