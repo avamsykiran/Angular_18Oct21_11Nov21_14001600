@@ -354,4 +354,77 @@ Angular 11
                 transform(value:any):any {
                     .........
                 }
-            }         
+            }        
+
+    Bootstrap Integration
+    ----------------------- 
+
+        1. include the bootstrap CDN link into the index.html file.
+        (or)
+        2.  Install the bootstrap 'npm install bootstrap --save'
+            include the 'node_modules/bootstrap/dist/css/bootstrap.min.css'
+                        'node_modules/bootstrap/dist/js/bootstrap.min.js'
+
+                        in the styles and scrpts sections respectivly in
+                        'angular.json' file
+
+    Services
+    ----------------------- 
+        services are classes that carry bussiness logic like, caliculations,
+        rest api calls ..etc.,
+
+
+        A service is supplied to  any where we have to acces  it via
+        dependency injection.
+
+        @Injectable({
+            providedIn:'root'
+        })
+        export default class MyService{
+
+        }
+
+        class ComponentOrPipeOrDirectiveOrService{
+            constructor(private serviceObj:MyService){
+
+            }
+        }
+
+    Routing
+    -------------------------------------
+
+        RouterModule            @angular/routing 
+
+            Routes      Route[]
+
+            Route       {
+                                path:'',
+                                componenet:Component,
+                                redirectTo:'',
+                                pathMatch:'startsWith|full',
+                                children:[],
+                                canActivate:[],
+                                canDeActivate:[],
+                                canActivateChild:[],
+                                canLoad:[]
+                         }
+
+            RouterModule.forRoot(Route[])       used to config paths on the root module
+            RouterModule.forChild(Route[])      used to config paths on the any child module
+
+            Router              is a service sued to navigate programatically
+                                .navigate(path,{pathVaraiblesOrQueryString...etc})
+                                .navigateByUrl(path)
+
+            ActivatedRoute      is a service used to retrive path variables/ query params or any other data
+                                assosiated with the current path.
+
+            <router-outlet></router-outlet>     is a component used to reserve the place
+                                                in the root component, which will be repalced
+                                                with the component mapped to the current path.
+
+            routerLink      is a directive (attribute) to be used on <a></a> to hold the path
+                            to which navigation must happen on clicking that link.
+
+            routerLinkActive    is a directive (attribute) to be used on <a></a>. this takes
+                                the name of a css-class to be applied when theat link is clicked.
