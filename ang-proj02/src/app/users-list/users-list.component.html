@@ -1,10 +1,9 @@
-
 <h3>Users List</h3>
 
 <div *ngIf="!users || users.length===0;else usersTable">
-    <div class="alert alert-info p-2">
+    <app-msg-box>
         <strong>No Records To Display</strong>
-    </div>
+    </app-msg-box>
 </div>
 
 <ng-template #usersTable>

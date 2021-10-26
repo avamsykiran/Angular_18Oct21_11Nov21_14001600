@@ -427,4 +427,81 @@ Angular 11
                             to which navigation must happen on clicking that link.
 
             routerLinkActive    is a directive (attribute) to be used on <a></a>. this takes
-                                the name of a css-class to be applied when theat link is clicked.
+                                the name of a css-class to be applied when theat link is clicked.1
+
+    Reusable Components
+    -------------------------------------
+
+        1. Passing content of the child component from its parent
+            <ng-content><ng-content>
+
+        2. Passing data from parent to child as attributes
+
+            @Component({
+                selector:'app-child'
+            })
+            class ChildComponent {
+
+                @Input()
+                attrib1:string;
+
+                @Input()
+                attrib2:number;
+            }
+
+            <app-child attrib1="soem value" attrib2="10">
+            </app-child>
+
+        3. Parent can handle an event raised by the child-component
+
+            
+            @Component({
+                selector:'app-child'
+            })
+            class ChildComponent {
+
+                @Output()
+                customEvent:EventEmitter<void>;
+
+                btnClicked(){
+                    this.customEvent.emit();
+                }
+            }
+
+            child.component.html
+            ---------------------------------
+                <button (click)="btnClicked()">Touch me</button>
+
+
+            @Component({
+                select:'app-xyzpqr'
+            })
+            class XyzpqrComponent {
+                doSomething(){
+                    ......
+                }
+            }
+
+            xyzpqr.component.html
+            ------------------------------
+                <app-child (customEvent)="doSomething()"></app-child>
+
+    Working with forms
+    -------------------------------------
+
+        Template Driven Forms                           Model Driven Forms/ Reactive Forms
+
+            FormsModule                                     ReactiveFormsModule
+                NgModel                                         FormGroup
+                NgForm                                          FormControl
+
+
+            Simple                                          Complex and Nested Forms
+            (a form haivng not more than 2 to3 controls)    like registration forms
+            like login forms
+
+            Standard Synchronous Validations                Synchronous and Asynchronous Validations as well
+
+            More on Template and less                       More on controller and less on the template
+            on the controller resulting                     facilatating simpler test cases.
+            in a complicated test cases
