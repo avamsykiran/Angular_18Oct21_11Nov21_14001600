@@ -227,7 +227,6 @@ Angular 11
                         Component = Controller              +   Template
                                     (state and behaviour)       (html dom)
 
-
                         header.component.ts
                         --------------------------------
                         @Component({
@@ -453,7 +452,6 @@ Angular 11
             </app-child>
 
         3. Parent can handle an event raised by the child-component
-
             
             @Component({
                 selector:'app-child'
@@ -505,3 +503,14 @@ Angular 11
             More on Template and less                       More on controller and less on the template
             on the controller resulting                     facilatating simpler test cases.
             in a complicated test cases
+ 
+    Assignment
+    -------------------------------------
+
+        Conseder a model called Employee having id,firtName,lastName,dateOfJoining,salary,email
+
+        Angular App
+            with a EmpolyeeList component and EmployeeForm component to diaply the list of employees
+            and add a new employee.
+
+    

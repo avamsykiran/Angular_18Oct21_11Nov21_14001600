@@ -1,0 +1,28 @@
+<h3>Users List</h3>
+
+<div *ngIf="!users || users.length===0;else usersTable">
+    <app-msg-box>
+        <strong>No Records To Display</strong>
+    </app-msg-box>
+</div>
+
+<ng-template #usersTable>
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <th>User#</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Role</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let u of users">
+                <td>{{u.id}}</td>
+                <td>{{u.fullName}}</td>
+                <td>{{u.email}}</td>
+                <td>{{u.role}}</td>
+            </tr>
+        </tbody>
+    </table>
+</ng-template>
