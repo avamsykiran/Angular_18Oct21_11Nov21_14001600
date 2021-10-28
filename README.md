@@ -510,7 +510,36 @@ Angular 11
         Conseder a model called Employee having id,firtName,lastName,dateOfJoining,salary,email
 
         Angular App
-            with a EmpolyeeList component and EmployeeForm component to diaply the list of employees
+            with a EmpolyeeList component and EmployeeForm component to dispaly the list of employees
             and add a new employee.
 
     
+    RxJS
+    -------------------------------------
+
+        Reactive Javascript
+
+        let bgJob = observer => {
+
+            observer.next(val);     //used to emit a value while the async process is on
+            observer.error(errMsg); //used to emit an error if the async process encounter one
+            observer.complete(); //used to signal the successful compeltion of the async process
+
+        }
+
+        let ob = new Observable(bgJob);
+
+        ob.subscribe(
+            (val) => {//invoked each tiem the observer.next is called}, //collect the emttied valeus
+            (err) => {//invoked each tiem the observer.error is called}, //respond to the error
+            () => {//invoked on calling observer.complete} //respond to the completion of the bgJob
+        ); //this invoek the bgJob.
+
+        'rxjs/operators'
+
+            map
+            filter
+            tap
+            catch
+            ...etc
+   

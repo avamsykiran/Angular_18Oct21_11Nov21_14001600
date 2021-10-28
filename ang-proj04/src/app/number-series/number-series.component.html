@@ -1,0 +1,28 @@
+<div class="card card-info m-2">
+    <div class="card-body p-4">
+        <form (ngSubmit)="formSubmitted()">
+            <div class="row g-3 align-items-center">
+                <div class="col">
+                    <input type="number" name="lb" [(ngModel)]="lb" placeholder="Lower Bound" class="form-control" />
+                </div>
+                <div class="col">
+                    <input type="number" name="ub" [(ngModel)]="ub" placeholder="Upper Bound" class="form-control" />
+                </div>
+                <div class="col">
+                    <label><input type="checkbox" name="c1" [(ngModel)]="evens" /> Evens</label>    
+                    <label><input type="checkbox" name="c2" [(ngModel)]="squares" /> Squares</label>
+                </div>
+                <div class="col">
+                    <button class="btn btn-primary" [disabled]="isJobInProgress">GENERATE</button>
+                </div>
+            </div>
+        </form>
+
+        <div class="border border-secondary p-2" *ngIf="err || nums">
+            <p *ngIf="err"><strong>{{err}}</strong></p>
+            <p *ngIf="nums">
+                <span *ngFor="let n of nums">{{n}} </span>
+            </p>
+        </div>
+    </div>
+</div>
