@@ -1,4 +1,8 @@
 <main class="container-fluid p-4">
+  <div class="card card-info p-2">
+    <input type="text" [(ngModel)]="opinion" />
+  </div>
+  <app-msg-box [msg]="opinion"></app-msg-box>
   <app-number-series></app-number-series>
   <app-number-series></app-number-series>
   <app-number-series></app-number-series>

@@ -542,4 +542,74 @@ Angular 11
             tap
             catch
             ...etc
-   
+    
+    Angular Component Lifecycle Hooks
+    -------------------------------------
+
+        Lifecycle Hook is a function that gets invoked at various stages of execution
+        of a Component. These functions can be overriden so as to perform specific actions
+        at specific stages of execution of the component
+
+        constructor()           invoked after         used for initilizing the fields
+                                instantiation         of the component
+
+        ngOnChanges()           invoked when          used to perform an action
+                                the @input fields     when the @Input field value changes
+                                change
+
+        ngOnInit()              invoked only once     indicates the initial load or rendering of the component.
+                                after the first         any action that has to aoccur after the first rendering
+                                ngOnChanges() call      of the component is written here....
+                                happens.              this is equivalent to onLoad event.
+
+        ngDoCheck()             invoked after every   used to detect chagnes happening to the fields
+                                ngOnChanges() call      of the component using our own algorithm.
+
+        ngOnDestroy()           invoked jsut before     used to hold any action that shall execute just
+                                the component unloaded  before the component gets unloaded.
+
+    json-server
+    -------------------------------------
+
+        is a fake rest api generation tool.
+
+        this is a javascript based tool that takes a .json file of data
+        and generate rest end points to execute CRUD operation on the .json file.
+
+        it is only for the purpose of practising or learning, rest api consumption.
+
+        npm install --save json-server
+
+        json-server --port 9999 --watch ./data.json
+
+        data.json
+        --------------
+            {
+                "depts":[
+                    {id:1,dname:'Accounts'},
+                    {id:2,dname:'HR'},
+                    {id:3,dname:'Java FSD'}
+                ],
+                "emps":[
+                    {id:1,name:'Vamsy',sal:4567,deptId:1}
+                ]
+            }
+
+        http://localhost:9999/depts
+        http://localhost:9999/emps
+
+    
+    Angular HttpClient
+    -------------------------------------
+
+        HttpClientModule
+
+            HttpClient          inbuilt service
+
+                get(url) : Observable
+                post(url,reqBody):Observable
+                put(url,reqBody):Observable
+                delete(url):Observable
+  
+
+                            

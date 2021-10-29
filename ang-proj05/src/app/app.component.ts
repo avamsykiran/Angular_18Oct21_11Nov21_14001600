@@ -6,9 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  opinion:string;
-
-  constructor(){
-    this.opinion="Your opinion here plz";
-  }
+  title = 'ang-proj05';
 }

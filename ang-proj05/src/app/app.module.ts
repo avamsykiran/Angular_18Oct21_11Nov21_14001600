@@ -1,20 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NumberSeriesComponent } from './number-series/number-series.component';
-import { MsgBoxComponent } from './msg-box/msg-box.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NumberSeriesComponent,
-    MsgBoxComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
