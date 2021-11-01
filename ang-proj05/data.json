@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "fullName": "Vamsy Kiran",
+      "role": "USER",
+      "email": "vamsy@gmail.com",
+      "password": "password"
+    },
+    {
+      "id": 2,
+      "fullName": "Suseela",
+      "role": "USER",
+      "email": "suseela@gmail.com",
+      "password": "password"
+    },
+    {
+      "id": 3,
+      "fullName": "Indhikaa",
+      "role": "USER",
+      "email": "indhikaa@gmail.com",
+      "password": "password"
+    },
+    {
+      "id": 4,
+      "email": "srinu@gmail.com",
+      "fullName": "Srinivas",
+      "password": "srinu",
+      "role": "USER"
+    },
+    {
+      "id": 5,
+      "email": "venky@gmail.com",
+      "fullName": "Venkat",
+      "password": "venkey",
+      "role": "USER"
+    }
+  ]
+}

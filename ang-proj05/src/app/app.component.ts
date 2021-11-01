@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ang-proj05';
+
+  title: string;
+  links: string[][];
+  
+  constructor() {
+    this.title = "BudgetTraker";
+    this.links = [
+      ['/listUsers', 'Users'],
+      ['/addUser', 'New User']
+    ];
+  }
 }
