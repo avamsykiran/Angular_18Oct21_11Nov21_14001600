@@ -24,15 +24,8 @@
     {
       "id": 4,
       "email": "srinu@gmail.com",
-      "fullName": "Srinivas",
+      "fullName": "Srinivas Dachepalli",
       "password": "srinu",
-      "role": "USER"
-    },
-    {
-      "id": 5,
-      "email": "venky@gmail.com",
-      "fullName": "Venkat",
-      "password": "venkey",
       "role": "USER"
     }
   ]

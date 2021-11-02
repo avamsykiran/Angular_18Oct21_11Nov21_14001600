@@ -1,5 +1,5 @@
 <div class="col-sm-6 mx-auto">
-    <h4>New User</h4>
+    <h4>{{isEditing?'Edit':'New'}} User</h4>
 
     <app-msg-box type="error" *ngIf="errMsg">
         <strong>{{errMsg}}</strong>

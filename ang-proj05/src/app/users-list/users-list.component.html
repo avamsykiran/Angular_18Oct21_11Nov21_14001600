@@ -1,34 +1,44 @@
-<h3>Users List</h3>
+<div class="col-sm-8 mx-auto">
 
-<app-msg-box *ngIf="!errMsg && !users">
-    <strong>Please wati while Loading Data..</strong>
-</app-msg-box>
 
-<app-msg-box *ngIf="errMsg" type="error">
-    <strong>{{errMsg}}</strong>
-</app-msg-box>
+    <h3>Users List</h3>
 
-<div *ngIf="users && users.length===0">
-    <app-msg-box>
-        <strong>No Records To Display</strong>
+    <app-msg-box *ngIf="!errMsg && !users">
+        <strong>Please wati while Loading Data..</strong>
     </app-msg-box>
-</div>
 
-<table class="table table-bordered table-striped table-hover" *ngIf="users && users.length>0">
-    <thead>
-        <tr>
-            <th>User#</th>
-            <th>Full Name</th>
-            <th>Email</th>
-            <th>Role</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let u of users">
-            <td>{{u.id}}</td>
-            <td>{{u.fullName}}</td>
-            <td>{{u.email}}</td>
-            <td>{{u.role}}</td>
-        </tr>
-    </tbody>
-</table>
+    <app-msg-box *ngIf="errMsg" type="error">
+        <strong>{{errMsg}}</strong>
+    </app-msg-box>
+
+    <div *ngIf="users && users.length===0">
+        <app-msg-box>
+            <strong>No Records To Display</strong>
+        </app-msg-box>
+    </div>
+
+    <table class="table table-bordered table-striped table-hover" *ngIf="users && users.length>0">
+        <thead>
+            <tr>
+                <th>User#</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th> Actions </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let u of users">
+                <td>{{u.id}}</td>
+                <td>{{u.fullName}}</td>
+                <td>{{u.email}}</td>
+                <td>{{u.role}}</td>
+                <td>
+                    <a class="btn btn-sm btn-secondary mr-2" [routerLink]="['/editUser',u.id]">EDIT</a>
+                    <button class="btn btn-sm btn-danger" (click)="remove(u.id)">DELETE</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

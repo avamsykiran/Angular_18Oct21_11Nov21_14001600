@@ -7,19 +7,32 @@ import { UsersService } from '../service/users.service';
   templateUrl: './users-list.component.html',
   styleUrls: ['./users-list.component.css']
 })
-export class UsersListComponent implements OnInit{
+export class UsersListComponent implements OnInit {
 
-  users?:User[];
-  errMsg?:string;
+  users?: User[];
+  errMsg?: string;
 
-  constructor(private usersService:UsersService) {
+  constructor(private usersService: UsersService) {
 
   }
 
-  ngOnInit(){
+  loadData() {
     this.usersService.getAll().subscribe(
-      data => this.users=data,
-      err => {console.log(err); this.errMsg="Unable to fetech data, inconvinience regretted";}
+      data => this.users = data,
+      err => { console.log(err); this.errMsg = "Unable to fetech data, inconvinience regretted"; }
     );
+  }
+
+  ngOnInit() {
+    this.loadData();
+  }
+
+  remove(id: number) {
+    if (confirm(`Are you sure of deleting user#${id} ?`)) {
+      this.usersService.deleteById(id).subscribe(
+        () => this.loadData(),
+        err => { console.log(err); this.errMsg = "Unable to delete data, inconvinience regretted"; }
+      );
+    }
   }
 }
