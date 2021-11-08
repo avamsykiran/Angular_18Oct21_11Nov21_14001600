@@ -618,10 +618,9 @@ Angular 11
 
         Angular App
            1. a json-server based test api for CRUD operations on Employee
-           2. EmployeeList component to retrive and display the lsit of employees.
+           2. EmployeeList component to retrive and display the list of employees.
            3. EmployeeForm component to add or edit an employee.
 
-    
     Modularization
     --------------------------------------------------------------------------------
     Domain: A domain NgModule is organized around a feature, business domain, or user experience.
@@ -645,8 +644,30 @@ Angular 11
             ng g module Services --module app.module
 
             lazy loading a domain module
-            -------------------------------------------------------------
+            ----------------------------
             ng g module EntityDoamin --route entity --module app.module
+
+            Budget Tracking Application CaseStudy
+            --------------------------------------------------------------
+            ng new ang-proj06
+            cd ang-proj06
+            npm install --save json-server bootstrap
+            ng g module Shared
+            ng g module Widgets
+            ng g module Services --module app.module
+            ng g module User --route user --module app.module
+            ng g module Txn --route txn --module app.module
+            ng g interface model/User
+            ng g interface model/Transaction
+            ng g service services/User --skipTests
+            ng g service services/Txn --skipTests
+            ng g c shared/Login --module shared.module --skipTests
+            ng g c shared/Registration --module shared.module --skipTests
+            ng g c widgets/MenuBar --module widgets.module --skipTests
+            ng g c widgets/MessageBox --module widgets.module --skipTests
+            ng g c txn/TxnsList --module txn.module --skipTests
+            ng g c txn/TxnForm --module txn.module --skipTests
+
 
     Router Guards
     ----------------------------------------------------------------------------------
