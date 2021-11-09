@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-message-box',
@@ -7,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessageBoxComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  type:string;
+
+  constructor() {
+    this.type="info";
+  }
 
   ngOnInit(): void {
   }

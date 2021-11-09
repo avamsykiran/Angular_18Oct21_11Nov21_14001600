@@ -9,6 +9,7 @@ import { RegistrationComponent } from './registration/registration.component';
   declarations: [LoginComponent, RegistrationComponent],
   imports: [
     CommonModule
-  ]
+  ],
+  exports:[LoginComponent, RegistrationComponent]
 })
 export class SharedModule { }
