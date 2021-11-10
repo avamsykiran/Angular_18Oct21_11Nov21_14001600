@@ -3,7 +3,7 @@
     {
       "id": 1,
       "fullName": "Vamsy Kiran",
-      "role": "USER",
+      "role": "ADMIN",
       "email": "vamsy@gmail.com",
       "password": "password"
     },
@@ -13,20 +13,6 @@
       "role": "USER",
       "email": "suseela@gmail.com",
       "password": "password"
-    },
-    {
-      "id": 3,
-      "fullName": "Indhikaa",
-      "role": "USER",
-      "email": "indhikaa@gmail.com",
-      "password": "password"
-    },
-    {
-      "id": 4,
-      "email": "srinu@gmail.com",
-      "fullName": "Srinivas Dachepalli",
-      "password": "srinu",
-      "role": "USER"
     }
   ],
   "txns":[]

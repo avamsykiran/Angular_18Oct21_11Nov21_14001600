@@ -6,9 +6,12 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="links">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item" *ngFor="let link of links">
                     <a class="nav-link" [routerLink]="link[0]" routerLiinkActive="active">{{link[1]}}</a>
+                </li>
+                <li class="nav-item" *ngIf="showLogout">
+                    <a class="nav-link" [routerLink]="" (click)="logoutBtnClicked()">Logout</a>
                 </li>
             </ul>
         </div>
